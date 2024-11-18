@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengambilan Keputusan Multikriteria (WP & GP)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pengambilan Keputusan Multikriteria (WP & GP)</h1>
+
+        <!-- Form untuk Weighted Product (WP) -->
+        <div>
+            <h2>Weighted Product (WP)</h2>
+            <div id="wp-form">
+                <div class="form-group">
+                    <label for="criteria-values">Masukkan Nilai Kriteria (Dipisahkan dengan koma, misal: 7,8,6):</label>
+                    <input type="text" id="criteria-values" placeholder="Contoh: 7,8,6">
+                </div>
+                <div class="form-group">
+                    <label for="weights">Masukkan Bobot Kriteria (Dipisahkan dengan koma, misal: 0.4,0.3,0.3):</label>
+                    <input type="text" id="weights" placeholder="Contoh: 0.4,0.3,0.3">
+                </div>
+                <button onclick="calculateWP()">Hitung WP</button>
+            </div>
+            <div id="wp-result" class="result"></div>
+        </div>
+
+        <!-- Form untuk Goal Programming (GP) -->
+        <div>
+            <h2>Goal Programming (GP)</h2>
+            <div id="gp-form">
+                <div class="form-group">
+                    <label for="c-values">Koefisien Fungsi Tujuan (Dipisahkan dengan koma, misal: 1,2):</label>
+                    <input type="text" id="c-values" placeholder="Contoh: 1,2">
+                </div>
+                <div class="form-group">
+                    <label for="constraints">Koefisien Kendala (Dipisahkan dengan koma untuk masing-masing kendala, misal: 1,2,3; 4,5,6):</label>
+                    <input type="text" id="constraints" placeholder="Contoh: 1,2,3; 4,5,6">
+                </div>
+                <div class="form-group">
+                    <label for="b-values">Nilai Batasan (Dipisahkan dengan koma, misal: 10,20):</label>
+                    <input type="text" id="b-values" placeholder="Contoh: 10,20">
+                </div>
+                <button onclick="calculateGP()">Hitung GP</button>
+            </div>
+            <div id="gp-result" class="result"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
