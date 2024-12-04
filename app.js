@@ -1,30 +1,6 @@
-// Fungsi untuk menghitung Weighted Product (WP)
-function calculateWP() {
-    // Ambil nilai kriteria dan bobot dari input
-    const criteriaValuesInput = document.getElementById('criteria-values').value;
-    const weightsInput = document.getElementById('weights').value;
-
-    const criteriaValues = criteriaValuesInput.split(',').map(Number);
-    const weights = weightsInput.split(',').map(Number);
-
-    // Validasi input
-    if (criteriaValues.length !== weights.length) {
-        alert("Jumlah nilai kriteria dan bobot tidak sama!");
-        return;
-    }
-
-    // Menghitung Weighted Product untuk alternatif
-    const wpValue = criteriaValues.reduce((product, value, index) => {
-        return product * Math.pow(value, weights[index]);
-    }, 1);
-
-    // Menampilkan hasil WP
-    document.getElementById('wp-result').innerText = `Nilai Weighted Product: ${wpValue.toFixed(4)}`;
-}
-
 // Fungsi untuk menghitung Goal Programming (GP)
 function calculateGP() {
-    // Ambil nilai koefisien tujuan, kendala dan batasan
+    // Ambil nilai koefisien tujuan, kendala, dan batasan
     const cValuesInput = document.getElementById('c-values').value;
     const constraintsInput = document.getElementById('constraints').value;
     const bValuesInput = document.getElementById('b-values').value;
